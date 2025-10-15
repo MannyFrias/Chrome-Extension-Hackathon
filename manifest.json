@@ -3,6 +3,7 @@
   "description": "Control the video playback speed",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": ["activeTab", "scripting"],
   "action": {
     "default_popup": "./scripts/hello.html",
     "default_icon": "./images/icon.png"

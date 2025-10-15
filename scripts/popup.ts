@@ -7,16 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     const tab = tabs[0];
-    chrome.tabs.sendMessage(
-      tab.id,
-      { action: "getPlaybackSpeed" },
-      (response) => {
-        if (response && response.playbackSpeed !== null) {
-          currSpeed.textContent = `${response.playbackSpeed}x`;
-        } else {
-          currSpeed.textContent = `no video selected`;
-        }
+    chrome.scripting.executeScript({
+      target: {tabId: tab.id}, 
+      function: () => {
+        
       }
-    );
-  });
-});
+    })
+}, })
