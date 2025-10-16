@@ -11,7 +11,7 @@
 
 ## GOALS
 
-- fast foward button
-- slow down button
-- pause button
+- fast foward button - DONE
+- slow down button - DONE
+- pause button - DONE
 - logic to do all of these things hehe :)
