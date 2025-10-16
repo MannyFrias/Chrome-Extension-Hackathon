@@ -8,17 +8,37 @@
       body {
         width: 200px;
         padding: 10px;
-        font-family: sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         background-color: black;
         color: white;
+        margin: 0;
+        border: 2px solid;
+        border-image: linear-gradient(
+          to top left,
+          #b827fc 0%,
+          #2c90fc 25%,
+          #b8fd33 50%,
+          #fec837 75%,
+          #fd1892 100%
+        );
+        border-image-slice: 1;
       }
-      #slow #fast {
-        justify-content: flex-start !important;
-        align-items: space-between;
+
+      h2 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .speed-control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
       }
 
       button {
-        margin: 5px;
         padding: 10px 12px;
         background-color: black;
         color: white;
@@ -32,24 +52,35 @@
           #fd1892 100%
         );
         border-image-slice: 1;
-        margin: 20px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
+        cursor: pointer;
+        font-weight: bold;
+        flex: 1;
+        margin: 0 2px;
       }
+
       #currentSpeed {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 8px 15px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        text-align: center;
+        flex: 2;
+        margin: 0 5px;
+      }
+
+      #reset {
+        display: block;
+        width: 98%;
+        margin-top: 10px;
       }
     </style>
   </head>
   <body>
-    <h2>Video playback speed</h2>
-    <button id="slow">-0.1x</button>
-    <span id="currentSpeed">Loading speed ...</span>
-    <button id="fast">+0.1x</button>
+    <h2>Video Playback Speed</h2>
+    <div class="speed-control">
+      <button id="slow">-0.1x</button>
+      <span id="currentSpeed">1.0x</span>
+      <button id="fast">+0.1x</button>
+    </div>
     <button id="reset">Reset</button>
     <script src="popup.js"></script>
   </body>
